@@ -29,7 +29,7 @@ def render_main():
     get_state_options()
     return render_template('home.html', option = get_state_options())
  
-@app.route("/", methods=['GET','POST'])
+@app.route("/", methods=['POST'])
 def render_fact():
     state = request.form.get('selectform')
     render_template('home.html',fact=get_fact(state))
