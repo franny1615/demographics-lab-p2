@@ -17,10 +17,11 @@ def get_state_options():
     return op
 
 def get_fact(state):
-    funfact = "Percentage of people under 18 in this state:"
+    funfact = ""
     for c in counties:
         if state == c["State"]:
-            funfact += c["Age"]["Percent Under 18 Years"]
+            fact = c["Age"]["Percent Under 18 Year"]
+            funfact += Markup("<p>" + str(fact) + "</p>")
     return funfact
     
 
