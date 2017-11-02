@@ -15,11 +15,23 @@ def get_state_options():
             state = c["State"]
     return op
 
+def get_fact(state):
+    funfact = "Percentage of people under 18 in this state:"
+    for c in counties:
+        if state == c["State"]:
+            funfact += c["Age"]["Percent Under 18 Years"]
+    return funfact
+    
+
 @app.route("/")
 def render_main():
     get_state_options()
     return render_template('home.html', option = get_state_options())
-    
+ 
+@app.route("/",methods=['GET','POST'])
+def render_fact():
+    state = request.form.get('selectform')
+    render_template('home.html',fact=get_fact(state))
     
 if __name__=="__main__":
     app.run(debug=False, port=54321)
