@@ -8,7 +8,7 @@ def get_state_options():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     state = counties[0]["State"]
-    op = []
+    op = ""
     for c in counties:
         op += Markup("<option value=" + state +">" + state + "</option>")
         test = c["State"]
