@@ -9,7 +9,7 @@ def get_state_options():
         counties = json.load(demographics_data)
     test = counties[0]["State"]
     for c in counties:
-        op = Markup("<option value=" + test +">" + test + "</option>")
+        op += Markup("<option value=" + test +">" + test + "</option>")
         test = c["State"]
     return op
 
