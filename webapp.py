@@ -23,7 +23,6 @@ def get_fact(state):
             fact = c["Age"]["Percent Under 18 Year"]
             funfact += Markup("<p>" + str(fact) + "</p>")
     return funfact
-    
 
 @app.route("/")
 def render_main():
@@ -32,7 +31,7 @@ def render_main():
  
 @app.route("/", methods=['POST'])
 def render_fact():
-    state = request.form.get('selectform')
+    state = request.args['data']
     render_template('home.html',fact=get_fact(state))
     
 if __name__=="__main__":
