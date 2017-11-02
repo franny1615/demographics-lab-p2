@@ -32,7 +32,7 @@ def render_main():
 @app.route("/", methods=['POST'])
 def render_fact():
     state = request.args['data']
-    render_template('home.html',fact=get_fact(state))
+    render_template('home.html', fact = get_fact(state))
     
 if __name__=="__main__":
     app.run(debug=False, port=54321)
