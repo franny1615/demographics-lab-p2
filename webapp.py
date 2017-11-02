@@ -10,8 +10,9 @@ def get_state_options():
     state = counties[0]["State"]
     op = ""
     for c in counties:
-        op += Markup("<option value=" + state +">" + state + "</option>")
-        state = c["State"]
+        if state != c["State"]:
+            op += Markup("<option value=" + state +">" + state + "</option>")
+            state = c["State"]
     return op
 
 @app.route("/")
