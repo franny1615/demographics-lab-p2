@@ -18,6 +18,7 @@ def get_state_options():
 
 def get_fact(state):
     funfact = ""
+    fact = 0
     for c in counties:
         if state == c["State"]:
             fact += c["Age"]["Percent Under 18 Years"]
