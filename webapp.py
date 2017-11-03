@@ -31,6 +31,7 @@ def render_main():
  
 @app.route("/app", methods=['GET','POST'])
 def render_fact():
+    get_state_options()
     place = request.args['data']
     return render_template('home.html', fact = get_fact(place))
     
