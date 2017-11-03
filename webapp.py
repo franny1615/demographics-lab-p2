@@ -24,7 +24,7 @@ def get_fact(state):
             fact += c["Age"]["Percent Under 18 Years"]
             numCounties += 1
     fact = round(fact/numCounties,2)
-    funfact = Markup("<p>" + "Percent of People Under the age of 18 Years in: " + state + " is, " + str(fact) + "%" + "</p>")
+    funfact = Markup("<p>" + "Percent of People Under the age of 18 Years in " + state + " is, " + str(fact) + "%" + "</p>")
     return funfact
 
 @app.route("/")
