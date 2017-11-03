@@ -31,7 +31,7 @@ def render_main():
  
 @app.route("/app", methods=['GET','POST'])
 def render_fact():
-    place = request.args['data']
+    #place = request.args['data']
     render_template('home.html', fact = "")
     
 if __name__=="__main__":
