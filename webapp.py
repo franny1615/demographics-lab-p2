@@ -18,10 +18,13 @@ def get_state_options():
 
 def get_fact(state):
     fact = 0
+    numCounties = 0
     for c in counties:
         if state == c["State"]:
             fact += c["Age"]["Percent Under 18 Years"]
-    funfact = Markup("<p>" + str(fact) + "</p>")
+            numCounties += 1
+    fact = fact/numCounties
+    funfact = Markup("<p>" + "Percent of People Under the age of 18 Years" + str(fact) + "</p>")
     return funfact
 
 @app.route("/")
